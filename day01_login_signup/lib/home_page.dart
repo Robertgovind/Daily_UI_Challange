@@ -9,20 +9,31 @@ class Home extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 33, 88, 241),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image(
-            image: AssetImage("assets/home.webp"),
+          const CircleAvatar(
+            radius: 200,
+            child: Image(
+              image: AssetImage("assets/home.webp"),
+              fit: BoxFit.cover,
+            ),
           ),
-          Text(
+          const SizedBox(
+            height: 100,
+          ),
+          const Text(
             "Wherever the art of Medicine is loved, there is also a love of Humanity",
             style: TextStyle(
                 fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
           ),
           ElevatedButton(
             onPressed: () {
-              LogIn();
+              const LogIn();
             },
-            child: Text("Get Started"),
+            child: const Text(
+              "Get Started",
+              style: TextStyle(fontSize: 20, color: Colors.black),
+            ),
           ),
         ],
       ),
