@@ -1,4 +1,3 @@
-import 'package:day02_profile/contact_list.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
