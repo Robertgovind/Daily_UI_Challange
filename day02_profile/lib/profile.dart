@@ -1,10 +1,14 @@
-import 'dart:ui';
-
+import 'package:day02_profile/contact_list.dart';
 import 'package:flutter/material.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
   const Profile({super.key});
 
+  @override
+  State<Profile> createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,9 +64,13 @@ class Profile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                    backgroundColor: Color.fromARGB(255, 196, 57, 103),
+                    backgroundColor: const Color.fromARGB(255, 196, 57, 103),
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          Navigator.pushNamed(context, "Contact List");
+                        });
+                      },
                       icon: const Icon(
                         Icons.call,
                         size: 28,
