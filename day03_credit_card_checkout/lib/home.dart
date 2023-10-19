@@ -1,10 +1,13 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,16 +169,25 @@ class Home extends StatelessWidget {
           ),
           Positioned(
             bottom: 10,
-            left: 150,
+            left: 125,
             child: ElevatedButton(
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.pink)),
-              onPressed: () {},
-              child: const Text(
-                "Pay",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+              onPressed: () {
+                setState(() {
+                  Navigator.pushNamed(context, "Payment");
+                });
+              },
+              child: Container(
+                width: 100,
+                child: const Center(
+                  child: Text(
+                    "Pay",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ),

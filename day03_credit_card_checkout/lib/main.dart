@@ -1,4 +1,5 @@
 import 'package:day03_credit_card_checkout/home.dart';
+import 'package:day03_credit_card_checkout/paymet.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +22,11 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: const Home(),
+      initialRoute: "Home",
+      routes: {
+        "Home": (context) => const Home(),
+        "Payment": (context) => const Payment()
+      },
     );
   }
 }
