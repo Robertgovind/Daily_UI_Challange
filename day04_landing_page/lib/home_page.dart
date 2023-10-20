@@ -58,9 +58,19 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(Icons.apps_rounded),
-                    CircleAvatar(
-                      radius: 25,
-                      backgroundImage: AssetImage("assets/image1.webp"),
+                    Stack(
+                      children: [
+                        Positioned(
+                            top: 0,
+                            child: CircleAvatar(
+                              radius: 8,
+                              backgroundColor: Color.fromARGB(255, 2, 124, 6),
+                            )),
+                        CircleAvatar(
+                          radius: 25,
+                          backgroundImage: AssetImage("assets/image1.webp"),
+                        ),
+                      ],
                     )
                   ],
                 ),
