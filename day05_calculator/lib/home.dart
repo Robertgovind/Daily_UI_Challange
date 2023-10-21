@@ -16,6 +16,8 @@ class _HomeState extends State<Home> {
   var output = "";
   var operation = "";
 
+  var hideInput = false;
+  var outputSize = 35.0;
   onClick(value) {
     if (value == "AC") {
       input = "";
@@ -36,9 +38,14 @@ class _HomeState extends State<Home> {
         if (output.endsWith(".1")) {
           output = output.substring(0, output.length - 2);
         }
+        input = output;
+        hideInput = true;
+        outputSize = 56.0;
       }
     } else {
       input = input + value;
+      hideInput = false;
+      outputSize = 35.0;
     }
 
     setState(() {});
@@ -59,7 +66,7 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    input,
+                    hideInput ? "" : input,
                     style: const TextStyle(
                         fontSize: 50,
                         fontWeight: FontWeight.bold,
@@ -68,7 +75,7 @@ class _HomeState extends State<Home> {
                   Text(
                     output,
                     style: TextStyle(
-                      fontSize: 35,
+                      fontSize: outputSize,
                       fontWeight: FontWeight.bold,
                       color: Colors.white.withOpacity(0.9),
                     ),
