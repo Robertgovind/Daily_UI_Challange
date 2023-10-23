@@ -21,6 +21,7 @@ class _SettingsState extends State<Settings> {
           icon: const Image(
             color: Colors.white,
             image: AssetImage("assets/bars.png"),
+            width: 30,
           ),
         ),
         title: Row(
@@ -68,69 +69,76 @@ class _SettingsState extends State<Settings> {
               width: 5,
             ),
             const CircleAvatar(
-              radius: 20,
+              radius: 17,
+              foregroundColor: Colors.white,
               backgroundImage: AssetImage("assets/profile.png"),
             ),
           ],
         ),
       ),
       backgroundColor: const Color.fromARGB(255, 16, 16, 16),
-      body: Column(
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 5,
+            ),
+            const Padding(
+              padding: EdgeInsets.all(15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(
+                    Icons.arrow_back,
+                    color: Color.fromARGB(255, 77, 71, 71),
+                  ),
+                  Text(
+                    "SETTINGS",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  SmallContainer(
+                    text: "SAVE EDITS",
+                    bgColor: Color.fromARGB(255, 27, 50, 28),
+                    textColor: Color.fromARGB(255, 4, 248, 12),
+                  ),
+                ],
+              ),
+            ),
+            const CircleAvatar(
+              backgroundImage: AssetImage(
+                "assets/profile.png",
+              ),
+              radius: 60,
+              backgroundColor: Color.fromARGB(255, 40, 34, 34),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon(
-                  Icons.arrow_back,
-                  color: Color.fromARGB(255, 77, 71, 71),
-                ),
-                Text(
-                  "SETTINGS",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500),
+                SizedBox(
+                  width: 10,
                 ),
                 SmallContainer(
-                  text: "SAVE EDITS",
-                  bgColor: Color.fromARGB(255, 27, 50, 28),
-                  textColor: Color.fromARGB(255, 4, 248, 12),
+                  text: "Upload new",
+                  textColor: Color.fromARGB(255, 103, 99, 99),
+                  bgColor: bgColor,
+                ),
+                SmallContainer(
+                  text: "Random avator",
+                  textColor: Color.fromARGB(255, 103, 99, 99),
+                  bgColor: bgColor,
+                ),
+                SizedBox(
+                  width: 10,
                 ),
               ],
             ),
-          ),
-          const CircleAvatar(
-            backgroundImage: AssetImage(
-              "assets/profile.png",
-            ),
-            radius: 60,
-            backgroundColor: Color.fromARGB(255, 40, 34, 34),
-          ),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox(
-                width: 10,
-              ),
-              SmallContainer(
-                text: "Upload new",
-                textColor: Color.fromARGB(255, 103, 99, 99),
-                bgColor: bgColor,
-              ),
-              SmallContainer(
-                text: "Random avator",
-                textColor: Color.fromARGB(255, 103, 99, 99),
-                bgColor: bgColor,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-            ],
-          ),
-          Expanded(
-            child: Container(
+            Container(
               margin: const EdgeInsets.all(15),
               decoration: BoxDecoration(
                   border:
@@ -228,9 +236,7 @@ class _SettingsState extends State<Settings> {
                 ],
               ),
             ),
-          ),
-          Expanded(
-            child: Container(
+            Container(
               margin: const EdgeInsets.all(15),
               decoration: BoxDecoration(
                   border:
@@ -245,14 +251,14 @@ class _SettingsState extends State<Settings> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Last Name",
+                          "Email",
                           style: TextStyle(
                               color: Color.fromARGB(255, 103, 99, 99),
                               fontWeight: FontWeight.w500,
                               fontSize: 17),
                         ),
                         Text(
-                          "Nguyen",
+                          "savanah@gmail.com",
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w500,
@@ -261,11 +267,182 @@ class _SettingsState extends State<Settings> {
                       ],
                     ),
                   ),
+                  Divider(
+                    color: Color.fromARGB(255, 103, 99, 99),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.check_box,
+                          color: Colors.yellow,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "Send me info about offers from Bettabets",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 103, 99, 99),
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-          ),
-        ],
+            Container(
+              margin: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                  border:
+                      Border.all(color: const Color.fromARGB(255, 65, 66, 65)),
+                  borderRadius: BorderRadius.circular(20),
+                  color: bgColor),
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Column(
+                      children: [
+                        Text(
+                          "+27 845 5573 41",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 17),
+                        ),
+                        Text(
+                          "Cellphone number",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 103, 99, 99),
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              backgroundColor: bgColor,
+                              title: const Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Phone number change",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 20),
+                                  ),
+                                  Icon(
+                                    Icons.close,
+                                    color: Color.fromARGB(255, 103, 99, 99),
+                                  ),
+                                ],
+                              ),
+                              content: SingleChildScrollView(
+                                child: Container(
+                                  height: 330,
+                                  padding: const EdgeInsets.all(3),
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: const Color.fromARGB(
+                                              255, 65, 66, 65)),
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: bgColor),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          "Please enter your password and new phone number",
+                                          style: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 103, 99, 99),
+                                              fontSize: 18),
+                                        ),
+                                        const Text(
+                                          "Password",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        const TextField(
+                                          obscureText: true,
+                                          decoration: InputDecoration(
+                                            border: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(10),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        const Text(
+                                          "New phone number",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        const TextField(
+                                          decoration: InputDecoration(
+                                            border: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(10),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 15,
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(left: 75),
+                                          child: ElevatedButton(
+                                              style: ButtonStyle(
+                                                  backgroundColor:
+                                                      MaterialStateColor
+                                                          .resolveWith(
+                                                              (states) => Colors
+                                                                  .yellow)),
+                                              onPressed: () {},
+                                              child: const Text(
+                                                "Confirm",
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              )),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              scrollable: true,
+                            );
+                          },
+                        );
+                      },
+                      child: const SmallContainer(
+                        text: "Change",
+                        textColor: Colors.white,
+                        bgColor: bgColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
